@@ -3,12 +3,38 @@ import { useState } from "react";
 import card from "./assets/card.png";
 import "./App.css";
 import "./assets/logo.svg";
-
+import Modal from "react-modal";
+const customStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+    "border-radius": "20px",
+    'width': "auto",
+  },
+};
 function App() {
-  const [count, setCount] = useState(0);
+  let subtitle;
+  const [modalIsOpen, setIsOpen] = useState(false);
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function afterOpenModal() {
+    // references are now sync'd and can be accessed.
+    subtitle.style.color = "#f00";
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
   return (
     <div className="h-full bg-black">
-      <div className="flex h-[50px] justify-center items-center">
+      <div className="flex  justify-center items-center">
         <svg
           xmlns:xlink="http://www.w3.org/1999/xlink"
           width="150"
@@ -16,7 +42,6 @@ function App() {
           viewBox="0 0 361 153"
           fill="none"
           className="mt-20"
-          
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -107,41 +132,28 @@ function App() {
           </defs>
         </svg>
       </div>
-      <div  className="flex flex-ol items-center relative b  justify-center h-screen">
-        <div className="flex md:flex-col justify-center">
-          <img src={card} alt="" className="max-w-full" />
-        </div>
-        <div className="flex flex-col items-center mt-4 w-35">
-          {/* Buttons */}
-
-          <div className="flex flex-col items-center mb-[120px] mt-4 md:mt-0 md:ml-4">
-            <a
-              target="_blank"
-              class="pointer-events-none mt-12 text-center text-2xl md:text-3xl justify-self-center p-4 px-8 rounded-full text-white bg-gradient-to-r from-purple-900 viapurple-700 to-blue-800"
-              href=""
-            >
-              {" "}
-              STACK BUY
-            </a>
-            <a
-              target="_blank"
-              class="pointer-events-none mt-12 text-center text-2xl md:text-3xl justify-self-center p-4 px-8 rounded-full text-white bg-gradient-to-r from-purple-900 viapurple-700 to-blue-800"
-              href=""
-            >
-              {" "}
-              STACK BUY
-            </a>
-            <a
-              target="_blank"
-              class="pointer-events-none mt-12 text-center text-2xl md:text-3xl justify-self-center p-4 px-8 rounded-full text-white bg-gradient-to-r from-purple-900 viapurple-700 to-blue-800"
-              href=""
-            >
-              {" "}
-              STACK BUY
-            </a>
-          </div>
+      <div className="flex-col  justify-center h-screen">
+        <div className="flex md:flex-col justify-center items-center">
+          <img src={card} width={600} alt="" className="" />
+          <button
+            onClick={openModal}
+            // target="_blank"
+            class=" relative bottom-12 text-center text-2xl md:text-3xl justify-self-center p-4 px-8 rounded-full text-white bg-gradient-to-r from-purple-900 viapurple-700 to-blue-800"
+          >
+            {" "}
+            BUY NOW
+          </button>
         </div>
       </div>
+      <Modal
+        isOpen={modalIsOpen}
+        onAfterOpen={afterOpenModal}
+        onRequestClose={closeModal}
+        style={customStyles}
+        contentLabel="Example Modal"
+      >
+        <h1 className="text-3xl">Choose your card</h1>
+      </Modal>
     </div>
   );
 }
