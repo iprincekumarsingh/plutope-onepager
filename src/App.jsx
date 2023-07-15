@@ -4,16 +4,24 @@ import card from "./assets/card.png";
 import "./App.css";
 import "./assets/logo.svg";
 import Modal from "react-modal";
+// AiOutlineClose
+import { AiOutlineClose } from "react-icons/ai";
 const customStyles = {
+  overlay: {
+    backgroundColor: "rgba(0, 0, 0, 0.75)",
+  },
   content: {
+    position: "absolute",
     top: "50%",
     left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
     transform: "translate(-50%, -50%)",
-    "border-radius": "20px",
-    'width': "auto",
+    maxWidth: "400px",
+    width: "90%",
+    border: "none",
+    borderRadius: "8px",
+    boxShadow: "0px 2px 10px rgba(0, 0, 0, 0.15)",
+    // padding: "24px"ff,
+    background: "#ffff",
   },
 };
 function App() {
@@ -132,7 +140,7 @@ function App() {
           </defs>
         </svg>
       </div>
-      <div className="flex-col  justify-center h-screen">
+      <div className="flex-col  justify-center ">
         <div className="flex md:flex-col justify-center items-center">
           <img src={card} width={600} alt="" className="" />
           <button
@@ -152,7 +160,37 @@ function App() {
         style={customStyles}
         contentLabel="Example Modal"
       >
-        <h1 className="text-3xl">Choose your card</h1>
+        <div className="flex w-full  justify-end items-end">
+          {/* AiOutlineClose */}
+          <AiOutlineClose
+            onClick={closeModal}
+            className="text-2xl cursor-pointer text-black"
+          />
+        </div>
+        <div className="text-center text-2xl">
+          <h1>
+            <span className="text-black font-semibold  ">Choose your Card</span>
+          </h1>
+        </div>
+
+        <form action="">
+       
+          <select
+            name="select"
+            id="select"
+            class="p-2 mt-2 rounded-sm  bg-slate-300 outline-none w-full min-h-20"
+          >
+            <option value="" class="text-black">
+              Stack
+            </option>
+            <option value="" class="text-black">
+              Game
+            </option>
+            <option value="" class="text-black">
+              Infinite
+            </option>
+          </select>
+        </form>
       </Modal>
     </div>
   );
