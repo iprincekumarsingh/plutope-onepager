@@ -6,6 +6,9 @@ import "./assets/logo.svg";
 import Modal from "react-modal";
 // AiOutlineClose
 import { AiOutlineClose } from "react-icons/ai";
+// BsCreditCard
+import { BsCreditCard } from "react-icons/bs";
+
 const customStyles = {
   overlay: {
     backgroundColor: "rgba(0, 0, 0, 0.75)",
@@ -40,6 +43,14 @@ function App() {
   function closeModal() {
     setIsOpen(false);
   }
+
+  const [select, setSelect] = useState("");
+
+  const handleOptionSelect = (event) => {
+    const selectedValue = event.target.value;
+    setSelect(selectedValue);
+    console.log(selectedValue);
+  };
   return (
     <div className="h-full bg-black">
       <div className="flex  justify-center items-center">
@@ -49,7 +60,7 @@ function App() {
           height="150"
           viewBox="0 0 361 153"
           fill="none"
-          className="mt-20"
+          className="mt-0"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -140,57 +151,74 @@ function App() {
           </defs>
         </svg>
       </div>
-      <div className="flex-col  justify-center ">
-        <div className="flex md:flex-col justify-center items-center">
-          <img src={card} width={600} alt="" className="" />
-          <button
-            onClick={openModal}
-            // target="_blank"
-            class=" relative bottom-12 text-center text-2xl md:text-3xl justify-self-center p-4 px-8 rounded-full text-white bg-gradient-to-r from-purple-900 viapurple-700 to-blue-800"
-          >
-            {" "}
-            BUY NOW
-          </button>
-        </div>
+      <div className="flex flex-col items-center h-screen">
+        <img src={card} width={600} alt="" className="w-ful" />
+        <button
+          onClick={openModal}
+          className="mt-8 text-center text-2xl md:text-3xl p-4 px-8 rounded-full text-white bg-gradient-to-r from-purple-900 viapurple-700 to-blue-800"
+        >
+          BUY NOW
+        </button>
       </div>
+
       <Modal
         isOpen={modalIsOpen}
         onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
         style={customStyles}
-        contentLabel="Example Modal"
       >
-        <div className="flex w-full  justify-end items-end">
-          {/* AiOutlineClose */}
-          <AiOutlineClose
+        <div className="flex justify-end items-end">{/* AiOutlineClose */}
+        <AiOutlineClose
             onClick={closeModal}
-            className="text-2xl cursor-pointer text-black"
+            className="text-2xl  text-black"
           />
         </div>
-        <div className="text-center text-2xl">
+        <div
+          className="text-start flex items-center "
+          style={{
+            fontFamily: "Poppins",
+          }}
+        >
           <h1>
-            <span className="text-black font-semibold  ">Choose your Card</span>
+            <span className="text-black text-2xl font-semibold">
+              Choose your Card
+            </span>
+            <p
+              style={{
+                fontFamily: "Poppins",
+              }}
+              className="text-sm"
+            >
+              Select cards you want to buy
+            </p>
           </h1>
+
+         
         </div>
 
         <form action="">
-       
           <select
             name="select"
             id="select"
-            class="p-2 mt-2 rounded-sm  bg-slate-300 outline-none w-full min-h-20"
+            className="p-2 mt-2  rounded-md  border border-gray200  outline-none w-full"
+            value={select}
+            onChange={handleOptionSelect}
           >
-            <option value="" class="text-black">
+            <option value="" className="text-black">
+              Select card
+            </option>
+            <option value="stack" className="text-black">
               Stack
             </option>
-            <option value="" class="text-black">
+            <option value="game" className="text-black">
               Game
             </option>
-            <option value="" class="text-black">
+            <option value="infinite" className="text-black">
               Infinite
             </option>
           </select>
         </form>
+        <a href=""></a>
       </Modal>
     </div>
   );
