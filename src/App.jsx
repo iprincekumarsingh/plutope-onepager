@@ -19,12 +19,12 @@ const customStyles = {
     left: "50%",
     transform: "translate(-50%, -50%)",
     maxWidth: "400px",
-    width: "90%",
+    width: "70%",
     border: "none",
     borderRadius: "8px",
     boxShadow: "0px 2px 10px rgba(0, 0, 0, 0.15)",
     // padding: "24px"ff,
-    background: "#ffff",
+    background: "#EEF1FF",
   },
 };
 function App() {
@@ -167,8 +167,9 @@ function App() {
         onRequestClose={closeModal}
         style={customStyles}
       >
-        <div className="flex justify-end items-end">{/* AiOutlineClose */}
-        <AiOutlineClose
+        <div className="flex justify-end items-end">
+          {/* AiOutlineClose */}
+          <AiOutlineClose
             onClick={closeModal}
             className="text-2xl  text-black"
           />
@@ -192,15 +193,13 @@ function App() {
               Select cards you want to buy
             </p>
           </h1>
-
-         
         </div>
 
         <form action="">
           <select
             name="select"
             id="select"
-            className="p-2 mt-2  rounded-md  border border-gray200  outline-none w-full"
+            className="p-2 mt-2 bg-[#EEF1FF]  rounded-md  border border-black  outline-none w-full"
             value={select}
             onChange={handleOptionSelect}
           >
@@ -218,7 +217,22 @@ function App() {
             </option>
           </select>
         </form>
-        <a href=""></a>
+        <div className="w-full bg-[#B1B2FF] mt-10 rounded-sm text-black text-center p-2">
+          <a
+            href=""
+            className=" w-[100px] text-center p-2 h-20 text-black text-lg font-medium"
+          >
+            FORM Link
+          </a>
+        </div>
+        <div className="w-full bg-[#AAC4FF] mt-1 rounded-sm text-black text-center p-2">
+          <a
+            href=""
+            className=" w-[100px] text-center p-2 h-20 text-black text-lg font-medium"
+          >
+            FIAT PAYMENT Link
+          </a>
+        </div>
       </Modal>
     </div>
   );
