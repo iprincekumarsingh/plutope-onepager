@@ -225,14 +225,42 @@ function App() {
             FORM Link
           </a>
         </div>
-        <div className="w-full bg-[#AAC4FF] mt-1 rounded-sm text-black text-center p-2">
-          <a
-            href=""
-            className=" w-[100px] text-center p-2 h-20 text-black text-lg font-medium"
-          >
-            FIAT PAYMENT Link
-          </a>
-        </div>
+       {
+          select === "stack" && (
+            <div className="w-full bg-[#AAC4FF] mt-1 rounded-sm text-black text-center p-2">
+            <a
+              href="https://fluidmoney.xyz/?publicKey=WQ4Ds5T7qMmwTitbyH6eVv:6385eFN8rGk4fubQx2quWB7B7bzGhWwaMdcG&themeLocked=lightMode&walletAddressLocked=0x51C867F41193C1748a55Fb434d7712c249eFA563&sourceAmountLocked=4022&destinationCurrencyCodeLocked=ETH"
+              className=" w-[100px] text-center p-2 h-20 text-black text-lg font-medium"
+            >
+              FIAT PAYMENT Link
+            </a>
+          </div>
+          )
+       }
+        {
+          select === "game" && (
+            <div className="w-full bg-[#AAC4FF] mt-1 rounded-sm text-black text-center p-2">
+            <a
+            href="https://fluidmoney.xyz/?publicKey=WQ4Ds5T7qMmwTitbyH6eVv:6385eFN8rGk4fubQx2quWB7B7bzGhWwaMdcG&themeLocked=lightMode&walletAddressLocked=0x51C867F41193C1748a55Fb434d7712c249eFA563&sourceAmountLocked=16334&destinationCurrencyCodeLocked=ETH"
+              className=" w-[100px] text-center p-2 h-20 text-black text-lg font-medium"
+            >
+              FIAT PAYMENT Link
+            </a>
+          </div>
+          )
+        }
+         {
+          select === "infinite" && (
+            <div className="w-full bg-[#AAC4FF] mt-1 rounded-sm text-black text-center p-2">
+            <a
+            href="https://fluidmoney.xyz/?publicKey=WQ4Ds5T7qMmwTitbyH6eVv:6385eFN8rGk4fubQx2quWB7B7bzGhWwaMdcG&themeLocked=lightMode&walletAddressLocked=0x51C867F41193C1748a55Fb434d7712c249eFA563&sourceAmountLocked=40959&destinationCurrencyCodeLocked=ETH"
+              className=" w-[100px] text-center p-2 h-20 text-black text-lg font-medium"
+            >
+              FIAT PAYMENT Link
+            </a>
+          </div>
+          )
+        }
       </Modal>
     </div>
   );
