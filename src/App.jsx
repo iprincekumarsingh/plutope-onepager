@@ -19,7 +19,7 @@ const customStyles = {
     left: "50%",
     transform: "translate(-50%, -50%)",
     maxWidth: "400px",
-    width: "70%",
+    width: "90%",
     border: "none",
     borderRadius: "8px",
     boxShadow: "0px 2px 10px rgba(0, 0, 0, 0.15)",
