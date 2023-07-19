@@ -6,7 +6,8 @@ import axios from 'axios';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-axios.defaults.baseURL = 'http://localhost:4001';
+axios.defaults.baseURL = 'https://drab-red-wasp-veil.cyclic.app/';
+// axios.defaults.baseURL = 'http://localhost:4001';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
