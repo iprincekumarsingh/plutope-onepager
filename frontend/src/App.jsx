@@ -32,6 +32,8 @@ function App() {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
 
+  const [display, setDisplay] = useState(false);
+
   const handleNameChange = (e) => {
     setName(e.target.value);
   };
@@ -60,6 +62,7 @@ function App() {
   }
 
   const [select, setSelect] = useState("");
+  const [formHide, setFormHide] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -73,12 +76,18 @@ function App() {
       toast.success("Form data saved successfully!", {
         position: toast.POSITION.left,
       });
+      setFormHide(true);
+      setDisplay(true);
     } catch (error) {
       console.error("Error saving form data:", error);
       toast.error("Already exist", {
         position: toast.POSITION.left,
       });
     }
+  };
+
+  const handleOptionSelect = (e) => {
+    setSelect(e.target.value);
   };
   return (
     <div className="h-full bg-black">
@@ -211,70 +220,84 @@ function App() {
         >
           <h1>
             <span className="text-black text-2xl font-semibold">
-              Fill the form
+              {!formHide ? "Enter your details" : "Select card"}
             </span>
-            {/* <p
-              style={{
-                fontFamily: "Poppins",
-              }}
-              className="text-sm"
-            >
-              Select cards you want to buy
-            </p> */}
+            {formHide ? (
+              <p
+                style={{
+                  fontFamily: "Poppins",
+                }}
+                className="text-sm"
+              >
+                Select cards you want to buy
+              </p>
+            ) : null}
           </h1>
         </div>
 
         <form onSubmit={handleSubmit}>
-          {/* <select
-            name="select"
-            id="select"
-            className="p-2 mt-2 bg-[#EEF1FF]  rounded-md  border border-black  outline-none w-full"
-            value={select}
-            onChange={handleOptionSelect}
-          >
-            <option value="" className="text-black">
-              Select card
-            </option>
-            <option value="stack" className="text-black">
-              Stack
-            </option>
-            <option value="game" className="text-black">
-              Game
-            </option>
-            <option value="infinite" className="text-black">
-              Infinite
-            </option>
-          </select> */}
+          {display && (
+            <div>
+              {/* Content to display when an option is selected */}
+              {/* Add your content here */}
 
-          <InputField
-            type="text"
-            placeholder="Name"
-            value={name}
-            onChange={handleNameChange}
-          />
-          <InputField
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={handleEmailChange}
-          />
-          <InputField
-            type="text"
-            placeholder="Phone"
-            value={phone}
-            onChange={handlePhoneChange}
-          />
-          <InputField type="submit" />
+              <select
+                name="select"
+                id="select"
+                className="p-2 mt-2 bg-[#EEF1FF]  rounded-md  border border-black  outline-none w-full"
+                value={select}
+                onChange={handleOptionSelect}
+              >
+                <option value="" className="text-black">
+                  Select card
+                </option>
+                <option value="stack" className="text-black">
+                  Stack
+                </option>
+                <option value="game" className="text-black">
+                  Game
+                </option>
+                <option value="infinite" className="text-black">
+                  Infinite
+                </option>
+              </select>
+            </div>
+          )}
+
+          {!formHide ? (
+            <>
+              <InputField
+                type="text"
+                placeholder="Name"
+                value={name}
+                onChange={handleNameChange}
+              />
+              <InputField
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={handleEmailChange}
+              />
+              <InputField
+                type="text"
+                placeholder="Phone"
+                value={phone}
+                onChange={handlePhoneChange}
+                className="cursor"
+              />
+              <InputField type="submit" />
+            </>
+          ) : null}
         </form>
 
         {select === "stack" && (
-          <FiatPaymentLink href="https://fluidmoney.xyz/?publicKey=WQ4Ds5T7qMmwTitbyH6eVv:6385eFN8rGk4fubQx2quWB7B7bzGhWwaMdcG&themeLocked=lightMode&walletAddressLocked=0x51C867F41193C1748a55Fb434d7712c249eFA563&sourceAmountLocked=4022&destinationCurrencyCodeLocked=ETH" />
+          <FiatPaymentLink href="https://fluidmoney.xyz/?publicKey=WQ4Ds5T7qMmwTitbyH6eVv:6385eFN8rGk4fubQx2quWB7B7bzGhWwaMdcG&themeLocked=lightMode&walletAddressLocked=0x6c59D4B73F2b986113EFd7917A6Dab258507Ab35&sourceAmountLocked=4022&destinationCurrencyCodeLocked=USDT_BSC" />
         )}
         {select === "game" && (
-          <FiatPaymentLink href="https://fluidmoney.xyz/?publicKey=WQ4Ds5T7qMmwTitbyH6eVv:6385eFN8rGk4fubQx2quWB7B7bzGhWwaMdcG&themeLocked=lightMode&walletAddressLocked=0x51C867F41193C1748a55Fb434d7712c249eFA563&sourceAmountLocked=16334&destinationCurrencyCodeLocked=ETH" />
+          <FiatPaymentLink href="https://fluidmoney.xyz/?publicKey=WQ4Ds5T7qMmwTitbyH6eVv:6385eFN8rGk4fubQx2quWB7B7bzGhWwaMdcG&themeLocked=lightMode&walletAddressLocked=0x6c59D4B73F2b986113EFd7917A6Dab258507Ab35&sourceAmountLocked=16344&destinationCurrencyCodeLocked=USDT_BSC" />
         )}
         {select === "infinite" && (
-          <FiatPaymentLink href="https://fluidmoney.xyz/?publicKey=WQ4Ds5T7qMmwTitbyH6eVv:6385eFN8rGk4fubQx2quWB7B7bzGhWwaMdcG&themeLocked=lightMode&walletAddressLocked=0x51C867F41193C1748a55Fb434d7712c249eFA563&sourceAmountLocked=40959&destinationCurrencyCodeLocked=ETH" />
+          <FiatPaymentLink href="https://fluidmoney.xyz/?publicKey=WQ4Ds5T7qMmwTitbyH6eVv:6385eFN8rGk4fubQx2quWB7B7bzGhWwaMdcG&themeLocked=lightMode&walletAddressLocked=0x6c59D4B73F2b986113EFd7917A6Dab258507Ab35&sourceAmountLocked=40959&destinationCurrencyCodeLocked=USDT_BSC" />
         )}
       </Modal>
     </div>
@@ -284,7 +307,7 @@ const FiatPaymentLink = ({ href }) => (
   <div className="w-full bg-[#AAC4FF] mt-1 rounded-xl text-black text-center p-2">
     <a
       href={href}
-      className="w-[100px] text-center p-2 h-20 text-black text-lg font-medium"
+      className="w-[100px] text-center p-2 m-10 h-20 text-black text-lg font-medium"
     >
       FIAT PAYMENT Link
     </a>
