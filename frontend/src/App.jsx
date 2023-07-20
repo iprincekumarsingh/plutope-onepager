@@ -25,6 +25,7 @@ const customStyles = {
     boxShadow: "0px 2px 10px rgba(0, 0, 0, 0.15)",
     // padding: "24px"ff,
     background: "#EEF1FF",
+    height: "fit-content",
   },
 };
 function App() {
@@ -304,12 +305,12 @@ function App() {
   );
 }
 const FiatPaymentLink = ({ href }) => (
-  <div className="w-full bg-[#AAC4FF] mt-1 rounded-xl text-black text-center p-2">
+  <div className="w-full bg-[#AAC4FF] mt-3  flex justify-center  items-center rounded-xl h-10 font-semibold text-black text-center ">
     <a
       href={href}
-      className="w-[100px] text-center p-2 m-10 h-20 text-black text-lg font-medium"
+      className=" text-center   h- text-black text-base  ase font-"
     >
-      FIAT PAYMENT Link
+      FIAT PAYMENT LINK
     </a>
   </div>
 );
@@ -320,7 +321,7 @@ const InputField = ({ type, placeholder, value, onChange }) => (
     placeholder={placeholder}
     value={value}
     onChange={onChange}
-    className="w-full p-2 mt-2 bg-[#EEF1FF] rounded-md border border-black outline-none"
+    className="w-full p-2 mt-10 bg-[#EEF1FF] rounded-md border border-black outline-none"
   />
 );
 
