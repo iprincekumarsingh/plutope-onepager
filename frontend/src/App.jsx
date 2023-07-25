@@ -292,28 +292,40 @@ function App() {
         </form>
 
         {select === "stack" && (
-          <FiatPaymentLink href="https://fluidmoney.xyz/?publicKey=WQ4Ds5T7qMmwTitbyH6eVv:6385eFN8rGk4fubQx2quWB7B7bzGhWwaMdcG&themeLocked=lightMode&walletAddressLocked=0x6c59D4B73F2b986113EFd7917A6Dab258507Ab35&sourceAmountLocked=4022&destinationCurrencyCodeLocked=USDT_BSC" />
+          <>
+          <FiatPaymentLink href="https://fluidmoney.xyz/?publicKey=WQ4Ds5T7qMmwTitbyH6eVv:6385eFN8rGk4fubQx2quWB7B7bzGhWwaMdcG&themeLocked=lightMode&walletAddressLocked=0x6c59D4B73F2b986113EFd7917A6Dab258507Ab35&sourceAmountLocked=4022&destinationCurrencyCodeLocked=USDT_BSC" text={"Fiat payment link"} />
+          <FiatPaymentLink href="https://nowpayments.io/payment/?iid=4637990935" text={"Crypto payment link"} />
+        </>
         )}
         {select === "game" && (
-          <FiatPaymentLink href="https://fluidmoney.xyz/?publicKey=WQ4Ds5T7qMmwTitbyH6eVv:6385eFN8rGk4fubQx2quWB7B7bzGhWwaMdcG&themeLocked=lightMode&walletAddressLocked=0x6c59D4B73F2b986113EFd7917A6Dab258507Ab35&sourceAmountLocked=16344&destinationCurrencyCodeLocked=USDT_BSC" />
+          <>
+          <FiatPaymentLink href="https://fluidmoney.xyz/?publicKey=WQ4Ds5T7qMmwTitbyH6eVv:6385eFN8rGk4fubQx2quWB7B7bzGhWwaMdcG&themeLocked=lightMode&walletAddressLocked=0x6c59D4B73F2b986113EFd7917A6Dab258507Ab35&sourceAmountLocked=16344&destinationCurrencyCodeLocked=USDT_BSC" text={"Fiat payment link"} />
+          <FiatPaymentLink href="https://nowpayments.io/payment/?iid=5121757933" text={"Crypto payment link"} />
+          
+          </>
         )}
         {select === "infinite" && (
-          <FiatPaymentLink href="https://fluidmoney.xyz/?publicKey=WQ4Ds5T7qMmwTitbyH6eVv:6385eFN8rGk4fubQx2quWB7B7bzGhWwaMdcG&themeLocked=lightMode&walletAddressLocked=0x6c59D4B73F2b986113EFd7917A6Dab258507Ab35&sourceAmountLocked=40959&destinationCurrencyCodeLocked=USDT_BSC" />
+          <>
+          <FiatPaymentLink href="https://fluidmoney.xyz/?publicKey=WQ4Ds5T7qMmwTitbyH6eVv:6385eFN8rGk4fubQx2quWB7B7bzGhWwaMdcG&themeLocked=lightMode&walletAddressLocked=0x6c59D4B73F2b986113EFd7917A6Dab258507Ab35&sourceAmountLocked=40959&destinationCurrencyCodeLocked=USDT_BSC" text={"Fiat payment link"} />
+          <FiatPaymentLink href="https://nowpayments.io/payment/?iid=4338977654" text={"Crypto payment link"} />
+        </>
         )}
       </Modal>
     </div>
   );
 }
-const FiatPaymentLink = ({ href }) => (
+const FiatPaymentLink = ({ href,text }) => (
   <div className="w-full bg-[#AAC4FF] mt-3  flex justify-center  items-center rounded-xl h-10 font-semibold text-black text-center ">
     <a
       href={href}
       className=" text-center   h- text-black text-base  ase font-"
     >
-      FIAT PAYMENT LINK
+      {text}
     </a>
   </div>
 );
+
+
 
 const InputField = ({ type, placeholder, value, onChange }) => (
   <input
