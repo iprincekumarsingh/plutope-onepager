@@ -375,7 +375,7 @@ function App() {
             /> */}
             {/* new link */}
             <FiatPaymentLink
-              href="https://fluidmoney.xyz/?publicKey=WQ4Ds5T7qMmwTitbyH6eVv:6385eFN8rGk4fubQx2quWB7B7bzGhWwaMdcG&themeLocked=lightMode&walletAddressLocked=0x6c59D4B73F2b986113EFd7917A6Dab258507Ab35&sourceAmountLocked=4508&destinationCurrencyCodeLocked=USDT_BSC"
+              href="https://fluidmoney.xyz/?publicKey=WQ4Ds5T7qMmwTitbyH6eVv:6385eFN8rGk4fubQx2quWB7B7bzGhWwaMdcG&themeLocked=lightMode&walletAddressLocked=0x6c59D4B73F2b986113EFd7917A6Dab258507Ab35&sourceAmountLocked=18308&destinationCurrencyCodeLocked=USDT_BSC"
               text={"Fiat payment link"}
             />
             <FiatPaymentLink
@@ -386,7 +386,7 @@ function App() {
         )}
         {select === "infinite" && (
           <>
-          {/* old link */}
+          {/* old link */} 
             {/* <FiatPaymentLink
               href="https://fluidmoney.xyz/?publicKey=WQ4Ds5T7qMmwTitbyH6eVv:6385eFN8rGk4fubQx2quWB7B7bzGhWwaMdcG&themeLocked=lightMode&walletAddressLocked=0x6c59D4B73F2b986113EFd7917A6Dab258507Ab35&sourceAmountLocked=40959&destinationCurrencyCodeLocked=USDT_BSC"
               text={"Fiat payment link"}
