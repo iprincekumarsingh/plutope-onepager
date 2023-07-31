@@ -357,7 +357,7 @@ function App() {
             /> */}
             {/* new l */}
             <FiatPaymentLink
-              href="https://fluidmoney.xyz/?publicKey=WQ4Ds5T7qMmwTitbyH6eVv:6385eFN8rGk4fubQx2quWB7B7bzGhWwaMdcG&themeLocked=lightMode&walletAddressLocked=0x6c59D4B73F2b986113EFd7917A6Dab258507Ab35&paymentMethodTypeLocked=UPI&sourceAmountLocked=4508&sourceCurrencyCodeLocked=INR&destinationCurrencyCodeLocked=USDT_BSC"
+              href="https://fluidmoney.xyz/?publicKey=WQ4Ds5T7qMmwTitbyH6eVv:6385eFN8rGk4fubQx2quWB7B7bzGhWwaMdcG&themeLocked=lightMode&walletAddressLocked=0x6c59D4B73F2b986113EFd7917A6Dab258507Ab35&sourceAmountLocked=4508&destinationCurrencyCodeLocked=USDT_BSC"
               text={"Fiat payment link"}
             />
             <FiatPaymentLink
@@ -375,7 +375,7 @@ function App() {
             /> */}
             {/* new link */}
             <FiatPaymentLink
-              href="https://fluidmoney.xyz/?publicKey=WQ4Ds5T7qMmwTitbyH6eVv:6385eFN8rGk4fubQx2quWB7B7bzGhWwaMdcG&themeLocked=lightMode&walletAddressLocked=0x6c59D4B73F2b986113EFd7917A6Dab258507Ab35&paymentMethodTypeLocked=UPI&sourceAmountLocked=18308&sourceCurrencyCodeLocked=INR&destinationCurrencyCodeLocked=USDT_BSC"
+              href="https://fluidmoney.xyz/?publicKey=WQ4Ds5T7qMmwTitbyH6eVv:6385eFN8rGk4fubQx2quWB7B7bzGhWwaMdcG&themeLocked=lightMode&walletAddressLocked=0x6c59D4B73F2b986113EFd7917A6Dab258507Ab35&sourceAmountLocked=4508&destinationCurrencyCodeLocked=USDT_BSC"
               text={"Fiat payment link"}
             />
             <FiatPaymentLink
@@ -392,7 +392,7 @@ function App() {
               text={"Fiat payment link"}
             /> */}
             <FiatPaymentLink
-              href="https://fluidmoney.xyz/?publicKey=WQ4Ds5T7qMmwTitbyH6eVv:6385eFN8rGk4fubQx2quWB7B7bzGhWwaMdcG&themeLocked=lightMode&walletAddressLocked=0x6c59D4B73F2b986113EFd7917A6Dab258507Ab35&paymentMethodTypeLocked=UPI&sourceAmountLocked=18308&sourceCurrencyCodeLocked=INR&destinationCurrencyCodeLocked=USDT_BSC"
+              href="https://fluidmoney.xyz/?publicKey=WQ4Ds5T7qMmwTitbyH6eVv:6385eFN8rGk4fubQx2quWB7B7bzGhWwaMdcG&themeLocked=lightMode&walletAddressLocked=0x6c59D4B73F2b986113EFd7917A6Dab258507Ab35&sourceAmountLocked=45908&destinationCurrencyCodeLocked=USDT_BSC"
               text={"Fiat payment link"}
             />
             <FiatPaymentLink
