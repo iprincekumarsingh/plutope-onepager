@@ -117,6 +117,8 @@ function App() {
   const handleOptionSelect = (e) => {
     setSelect(e.target.value);
   };
+  const [buyoption, setBuyOption] = useState("");
+
   return (
     <div className="h-full bg-black">
       <div className="flex justify-center ">
@@ -279,78 +281,127 @@ function App() {
             ) : null}
           </h1>
         </div>
+        <select
+          name="select"
+          id="select"
+          className="p-2 mt-2 bg-[#EEF1FF]  rounded-md  border border-black  outline-none w-full"
+          value={buyoption}
+          onChange={(e) => setBuyOption(e.target.value)}
+        >
+          <option value="" className="text-black">
+            Select card
+          </option>
 
-        <form onSubmit={handleSubmit}>
-          {display && (
-            <div>
-              <select
-                name="select"
-                id="select"
-                className="p-2 mt-2 bg-[#EEF1FF]  rounded-md  border border-black  outline-none w-full"
-                value={select}
-                onChange={handleOptionSelect}
-              >
-                <option value="" className="text-black">
-                  Select card
-                </option>
-                <option value="stack" className="text-black">
-                  Stack
-                </option>
-                <option value="game" className="text-black">
-                  Game
-                </option>
-                <option value="infinite" className="text-black">
-                  Infinite
-                </option>
-              </select>
-            </div>
-          )}
+          <option value="fiat" className="text-black">
+            Fiat
+          </option>
+          <option value="crypto" className="text-black">
+            Crypto
+          </option>
+        </select>
 
-          {!formHide ? (
-            <>
-              <InputField
-                type="text"
-                placeholder="Name"
-                value={name}
-                onChange={handleNameChange}
-              />
-              <InputField
-                type="email"
-                placeholder="Email"
-                value={email}
-                onChange={handleEmailChange}
-              />
-              <div className="flex gap-1">
-                <select
-                  className="p-2 mt-10 text-black rounded-md border border-black outline-none w-[75px]"
-                  value={selectedCountryCode}
-                  onChange={handleSelectChange}
+        {buyoption === "fiat" && (
+          <form onSubmit={handleSubmit}>
+            {display && (
+              <div>
+                {/* <select
+                  name="select"
+                  id="select"
+                  className="p-2 mt-2 bg-[#EEF1FF]  rounded-md  border border-black  outline-none w-full"
+                  value={select}
+                  onChange={handleOptionSelect}
                 >
                   <option value="" className="text-black">
-                    Select a country
+                    Select card
                   </option>
-                  {extractedDataArray.map((data, index) => (
-                    <option key={index} value={data.callingCodePart}>
-                      {data.callingCodePart} {data.countryCodePart}
-                    </option>
-                  ))}
-                </select>
-                <InputField
-                  type="text"
-                  placeholder="Phone"
-                  value={phone}
-                  onChange={handlePhoneChange}
-                  className="p-2 mt-10 text-black rounded-md border border-black outline-none"
+                  <option value="stack" className="text-black">
+                    Stack
+                  </option>
+                  <option value="game" className="text-black">
+                    Game
+                  </option>
+                  <option value="infinite" className="text-black">
+                    Infinite
+                  </option>
+                </select> */}
+
+                <FiatPaymentLink
+                  href="https://fluidmoney.xyz/?publicKey=WQ4Ds5T7qMmwTitbyH6eVv:6385eFN8rGk4fubQx2quWB7B7bzGhWwaMdcG&themeLocked=lightMode&walletAddressLocked=0x6c59D4B73F2b986113EFd7917A6Dab258507Ab35&sourceAmountLocked=4508&destinationCurrencyCodeLocked=USDT_BSC"
+                  text={"Stack payment link"}
+                />
+                <FiatPaymentLink
+                  href="https://fluidmoney.xyz/?publicKey=WQ4Ds5T7qMmwTitbyH6eVv:6385eFN8rGk4fubQx2quWB7B7bzGhWwaMdcG&themeLocked=lightMode&walletAddressLocked=0x6c59D4B73F2b986113EFd7917A6Dab258507Ab35&sourceAmountLocked=18308&destinationCurrencyCodeLocked=USDT_BSC"
+                  text={"Game payment link"}
+                />
+                <FiatPaymentLink
+                  href="https://fluidmoney.xyz/?publicKey=WQ4Ds5T7qMmwTitbyH6eVv:6385eFN8rGk4fubQx2quWB7B7bzGhWwaMdcG&themeLocked=lightMode&walletAddressLocked=0x6c59D4B73F2b986113EFd7917A6Dab258507Ab35&sourceAmountLocked=45908&destinationCurrencyCodeLocked=USDT_BSC"
+                  text={"Infinite payment link"}
                 />
               </div>
-              <InputField type="submit" />
-            </>
-          ) : null}
-        </form>
+            )}
+
+            {!formHide ? (
+              <>
+                <InputField
+                  type="text"
+                  placeholder="Name"
+                  value={name}
+                  onChange={handleNameChange}
+                />
+                <InputField
+                  type="email"
+                  placeholder="Email"
+                  value={email}
+                  onChange={handleEmailChange}
+                />
+                <div className="flex gap-1">
+                  <select
+                    className="p-2 mt-10 text-black rounded-md border border-black outline-none w-[75px]"
+                    value={selectedCountryCode}
+                    onChange={handleSelectChange}
+                  >
+                    <option value="" className="text-black">
+                      Select a country
+                    </option>
+                    {extractedDataArray.map((data, index) => (
+                      <option key={index} value={data.callingCodePart}>
+                        {data.callingCodePart} {data.countryCodePart}
+                      </option>
+                    ))}
+                  </select>
+                  <InputField
+                    type="text"
+                    placeholder="Phone"
+                    value={phone}
+                    onChange={handlePhoneChange}
+                    className="p-2 mt-10 text-black rounded-md border border-black outline-none"
+                  />
+                </div>
+                <InputField type="submit" />
+              </>
+            ) : null}
+          </form>
+        )}
+        {buyoption === "crypto" && (
+          <>
+            <FiatPaymentLink
+              href="https://buy.copperx.io/payment/payment-link/d18a0f29-2191-4cf5-962d-2067c7668aea"
+              text={"Stack payment link"}
+            />
+            <FiatPaymentLink
+              href="https://buy.copperx.io/payment/payment-link/f1f553dd-18fe-4336-8552-c815dc331be2"
+              text={"Game payment link"}
+            />
+            <FiatPaymentLink
+              href="https://buy.copperx.io/payment/payment-link/226b86ee-1ae4-45be-bf1e-47a28176317b"
+              text={"Infinite payment link"}
+            />
+          </>
+        )}
 
         {select === "stack" && (
           <>
-          {/* old link */}
+            {/* old link */}
             {/* <FiatPaymentLink
               href="https://fluidmoney.xyz/?publicKey=WQ4Ds5T7qMmwTitbyH6eVv:6385eFN8rGk4fubQx2quWB7B7bzGhWwaMdcG&themeLocked=lightMode&walletAddressLocked=0x6c59D4B73F2b986113EFd7917A6Dab258507Ab35&sourceAmountLocked=4022&destinationCurrencyCodeLocked=USDT_BSC"
               text={"Fiat payment link"}
@@ -372,7 +423,7 @@ function App() {
         )}
         {select === "game" && (
           <>
-          {/* old link */}
+            {/* old link */}
             {/* <FiatPaymentLink
               href="https://fluidmoney.xyz/?publicKey=WQ4Ds5T7qMmwTitbyH6eVv:6385eFN8rGk4fubQx2quWB7B7bzGhWwaMdcG&themeLocked=lightMode&walletAddressLocked=0x6c59D4B73F2b986113EFd7917A6Dab258507Ab35&sourceAmountLocked=16344&destinationCurrencyCodeLocked=USDT_BSC"
               text={"Fiat payment link"}
@@ -394,7 +445,7 @@ function App() {
         )}
         {select === "infinite" && (
           <>
-          {/* old link */} 
+            {/* old link */}
             {/* <FiatPaymentLink
               href="https://fluidmoney.xyz/?publicKey=WQ4Ds5T7qMmwTitbyH6eVv:6385eFN8rGk4fubQx2quWB7B7bzGhWwaMdcG&themeLocked=lightMode&walletAddressLocked=0x6c59D4B73F2b986113EFd7917A6Dab258507Ab35&sourceAmountLocked=40959&destinationCurrencyCodeLocked=USDT_BSC"
               text={"Fiat payment link"}
