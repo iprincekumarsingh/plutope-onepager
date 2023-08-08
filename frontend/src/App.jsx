@@ -267,7 +267,7 @@ function App() {
         >
           <h1>
             <span className="text-black text-2xl font-semibold">
-              {!formHide ? "Enter your details" : "Select card"}
+              {/* {!formHide ? "Enter your details" : "Select card"} */}
             </span>
             {formHide ? (
               <p
@@ -293,10 +293,10 @@ function App() {
           </option>
 
           <option value="fiat" className="text-black">
-            Fiat
+            Fiat Payment
           </option>
           <option value="crypto" className="text-black">
-            Crypto
+            Crypto Payment
           </option>
         </select>
 
@@ -327,15 +327,15 @@ function App() {
 
                 <FiatPaymentLink
                   href="https://fluidmoney.xyz/?publicKey=WQ4Ds5T7qMmwTitbyH6eVv:6385eFN8rGk4fubQx2quWB7B7bzGhWwaMdcG&themeLocked=lightMode&walletAddressLocked=0x6c59D4B73F2b986113EFd7917A6Dab258507Ab35&sourceAmountLocked=4508&destinationCurrencyCodeLocked=USDT_BSC"
-                  text={"Stack payment link"}
+                  text={"Stack"}
                 />
                 <FiatPaymentLink
                   href="https://fluidmoney.xyz/?publicKey=WQ4Ds5T7qMmwTitbyH6eVv:6385eFN8rGk4fubQx2quWB7B7bzGhWwaMdcG&themeLocked=lightMode&walletAddressLocked=0x6c59D4B73F2b986113EFd7917A6Dab258507Ab35&sourceAmountLocked=18308&destinationCurrencyCodeLocked=USDT_BSC"
-                  text={"Game payment link"}
+                  text={"Game "}
                 />
                 <FiatPaymentLink
                   href="https://fluidmoney.xyz/?publicKey=WQ4Ds5T7qMmwTitbyH6eVv:6385eFN8rGk4fubQx2quWB7B7bzGhWwaMdcG&themeLocked=lightMode&walletAddressLocked=0x6c59D4B73F2b986113EFd7917A6Dab258507Ab35&sourceAmountLocked=45908&destinationCurrencyCodeLocked=USDT_BSC"
-                  text={"Infinite payment link"}
+                  text={"Infinite"}
                 />
               </div>
             )}
@@ -386,15 +386,15 @@ function App() {
           <>
             <FiatPaymentLink
               href="https://buy.copperx.io/payment/payment-link/d18a0f29-2191-4cf5-962d-2067c7668aea"
-              text={"Stack payment link"}
+              text={"Stack "}
             />
             <FiatPaymentLink
               href="https://buy.copperx.io/payment/payment-link/f1f553dd-18fe-4336-8552-c815dc331be2"
-              text={"Game payment link"}
+              text={"Game "}
             />
             <FiatPaymentLink
               href="https://buy.copperx.io/payment/payment-link/226b86ee-1ae4-45be-bf1e-47a28176317b"
-              text={"Infinite payment link"}
+              text={"Infinite "}
             />
           </>
         )}
