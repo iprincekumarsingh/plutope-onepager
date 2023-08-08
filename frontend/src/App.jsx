@@ -401,20 +401,12 @@ function App() {
 
         {select === "stack" && (
           <>
-            {/* old link */}
-            {/* <FiatPaymentLink
-              href="https://fluidmoney.xyz/?publicKey=WQ4Ds5T7qMmwTitbyH6eVv:6385eFN8rGk4fubQx2quWB7B7bzGhWwaMdcG&themeLocked=lightMode&walletAddressLocked=0x6c59D4B73F2b986113EFd7917A6Dab258507Ab35&sourceAmountLocked=4022&destinationCurrencyCodeLocked=USDT_BSC"
-              text={"Fiat payment link"}
-            /> */}
-            {/* new l */}
+            
             <FiatPaymentLink
               href="https://fluidmoney.xyz/?publicKey=WQ4Ds5T7qMmwTitbyH6eVv:6385eFN8rGk4fubQx2quWB7B7bzGhWwaMdcG&themeLocked=lightMode&walletAddressLocked=0x6c59D4B73F2b986113EFd7917A6Dab258507Ab35&sourceAmountLocked=4508&destinationCurrencyCodeLocked=USDT_BSC"
               text={"Fiat payment link"}
             />
-            {/* <FiatPaymentLink
-              href="https://nowpayments.io/payment/?iid=4637990935"
-              text={"Crypto payment link"}
-            /> */}
+           
             <FiatPaymentLink
               href="https://buy.copperx.io/payment/payment-link/d18a0f29-2191-4cf5-962d-2067c7668aea"
               text={"Crypto payment link"}
@@ -469,14 +461,14 @@ function App() {
   );
 }
 const FiatPaymentLink = ({ href, text }) => (
-  <div className="w-full bg-[#AAC4FF] mt-3  flex justify-center  items-center rounded-xl h-10 font-semibold text-black text-center ">
+  <a href={href} className="w-full bg-[#AAC4FF] mt-3  flex justify-center  items-center rounded-xl h-10 font-semibold text-black text-center ">
     <a
-      href={href}
+      
       className=" text-center   h- text-black text-base  ase font-"
     >
-      {text}
     </a>
-  </div>
+      {text}
+  </a>
 );
 
 const InputField = ({ type, placeholder, value, onChange }) => (
