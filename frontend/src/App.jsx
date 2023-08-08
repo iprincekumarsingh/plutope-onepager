@@ -365,7 +365,7 @@ function App() {
               text={"Crypto payment link"}
             /> */}
             <FiatPaymentLink
-              href="https://buy.copperx.io/payment/payment-link/226b86ee-1ae4-45be-bf1e-47a28176317b"
+              href="https://buy.copperx.io/payment/payment-link/d18a0f29-2191-4cf5-962d-2067c7668aea"
               text={"Crypto payment link"}
             />
           </>
@@ -403,12 +403,12 @@ function App() {
               href="https://fluidmoney.xyz/?publicKey=WQ4Ds5T7qMmwTitbyH6eVv:6385eFN8rGk4fubQx2quWB7B7bzGhWwaMdcG&themeLocked=lightMode&walletAddressLocked=0x6c59D4B73F2b986113EFd7917A6Dab258507Ab35&sourceAmountLocked=45908&destinationCurrencyCodeLocked=USDT_BSC"
               text={"Fiat payment link"}
             />
-            <FiatPaymentLink
+            {/* <FiatPaymentLink
               href="https://nowpayments.io/payment/?iid=4338977654"
               text={"Crypto payment link"}
-            />
+            /> */}
             <FiatPaymentLink
-              href="https://buy.copperx.io/payment/payment-link/d18a0f29-2191-4cf5-962d-2067c7668aea"
+              href="https://buy.copperx.io/payment/payment-link/226b86ee-1ae4-45be-bf1e-47a28176317b"
               text={"Crypto payment link"}
             />
           </>
