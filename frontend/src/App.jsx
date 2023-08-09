@@ -289,7 +289,7 @@ function App() {
           onChange={(e) => setBuyOption(e.target.value)}
         >
           <option value="" className="text-black">
-            Select card
+            Select Payment
           </option>
 
           <option value="fiat" className="text-black">
@@ -460,13 +460,10 @@ function App() {
     </div>
   );
 }
+
 const FiatPaymentLink = ({ href, text }) => (
   <a href={href} className="w-full bg-[#AAC4FF] mt-3  flex justify-center  items-center rounded-xl h-10 font-semibold text-black text-center ">
-    <a
-      
-      className=" text-center   h- text-black text-base  ase font-"
-    >
-    </a>
+   
       {text}
   </a>
 );
