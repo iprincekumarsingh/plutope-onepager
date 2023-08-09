@@ -9,6 +9,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import countryCodes from "country-codes-list";
+import card_new from "./assets/card_new.png";
 const myCountryCodesObject = countryCodes.customList(
   "countryCode",
   "[{countryCode}] {countryNameEn}: +{countryCallingCode}"
@@ -120,7 +121,7 @@ function App() {
   const [buyoption, setBuyOption] = useState("");
 
   return (
-    <div className="h-full bg-black">
+    <div className="h-full   bg-black">
       <div className="flex justify-center ">
         <div
           className="logo"
@@ -236,8 +237,8 @@ function App() {
         </a>
       </div> */}
 
-      <div className="flex flex-col items-center h-screen">
-        <img src={card} width={600} alt="" className="w-ful" />
+      <div className="flex flex-col items-center h-full">
+        <img src={card_new} width={600} alt="" className="w-ful" />
         <button
           onClick={openModal}
           className="mt-8 text-center text-2xl md:text-3xl p-4 px-8 rounded-full text-white bg-gradient-to-r from-purple-900 viapurple-700 to-blue-800"
